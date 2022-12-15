@@ -1,10 +1,32 @@
-import { Header } from "./styledComponents";
+import { Header, Image, XList, LiItem, Button } from "./styledComponents";
+import { HeadMenuButton } from "../../consts/ButtonList";
 
 const PageHeader = () => {
+  function ClickHandler(index: string) {
+    alert(`Oh Ho~ I'm ${index}`);
+  }
+
   return (
-    <div>
-      <Header> My Space </Header>
-    </div>
+    <>
+      <Header>
+        <XList>
+          {HeadMenuButton.map((buttonItem) => {
+            return (
+              <LiItem>
+                <Button
+                  onClick={() => {
+                    ClickHandler(buttonItem.ID);
+                  }}
+                >
+                  {buttonItem.text}
+                </Button>
+              </LiItem>
+            );
+          })}
+        </XList>
+      </Header>
+      <Image />
+    </>
   );
 };
 
