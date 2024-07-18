@@ -1,31 +1,38 @@
-import { Header, Image, XList, LiItem, Button } from "./styledComponents";
+import {
+  Header,
+  Image,
+  XList,
+  LiItem,
+  Button,
+  CenterDiv,
+} from "./styledComponents";
 import { HeadMenuButton } from "../../consts/ButtonList";
+import { useNavigate } from "react-router";
 
 const PageHeader = () => {
-  function ClickHandler(index: string) {
-    alert(`Oh Ho~ I'm ${index}`);
-  }
-
+  const navigate = useNavigate();
   return (
     <>
-      <Header>
-        <XList>
-          {HeadMenuButton.map((buttonItem) => {
-            return (
-              <LiItem>
-                <Button
-                  onClick={() => {
-                    ClickHandler(buttonItem.ID);
-                  }}
-                >
-                  {buttonItem.text}
-                </Button>
-              </LiItem>
-            );
-          })}
-        </XList>
-      </Header>
-      <Image />
+      <CenterDiv>
+        <Header>
+          <XList>
+            {HeadMenuButton.map((buttonItem) => {
+              return (
+                <LiItem key={buttonItem.ID}>
+                  <Button
+                    onClick={() => {
+                      navigate(buttonItem.path);
+                    }}
+                  >
+                    {buttonItem.text}
+                  </Button>
+                </LiItem>
+              );
+            })}
+          </XList>
+          <Image />
+        </Header>
+      </CenterDiv>
     </>
   );
 };

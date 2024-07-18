@@ -1,15 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./global.css";
-import HomePage from "./pages/HomePage";
 import reportWebVitals from "./reportWebVitals";
+import RootRouter from "./router";
+import { BrowserRouter } from "react-router-dom";
+import ErrorBoundary from "./ErrorBoundary";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") || document.createElement("div")
 );
 root.render(
   <React.StrictMode>
-    <HomePage />
+    <Provider store={store}>
+      <BrowserRouter>
+        <ErrorBoundary>
+          <RootRouter />
+        </ErrorBoundary>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

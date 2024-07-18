@@ -24,3 +24,11 @@ button {
   outline: none;
   border: none;
 }
+
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  background: #BECBD3;
+  height: 100vh;
+}

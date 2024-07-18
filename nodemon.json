@@ -1,0 +1,9 @@
+{
+    "verbos": false,
+    "watch": [
+        "server/",
+        "nodemon.json",
+        "package.json"
+    ],
+    "ext": "js,json,tsx,ts"
+}
