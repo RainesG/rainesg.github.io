@@ -1,10 +1,23 @@
-import { useState } from 'react';
-import styles from './button.module.scss';
-
-export const Button =()=>{
-    const [layerOn,setLayerOn]=useState(true)
-    return <div>
-        <button onClick={()=>{setLayerOn(!layerOn)}}>BUTTON</button>
-        <div className={layerOn?styles.layout:''}></div>
-    </div>
+import { HTMLAttributes } from "react";
+import styles from "./button.module.scss";
+import classNames from "classnames";
+interface ButtonProps {
+  label?: string;
 }
+
+export const Button = ({
+  onClick,
+  label,
+  className,
+}: HTMLAttributes<HTMLButtonElement> & ButtonProps) => {
+  return (
+    <div>
+      <button
+        className={classNames(styles.button, className)}
+        onClick={onClick}
+      >
+        {label || "Button"}
+      </button>
+    </div>
+  );
+};

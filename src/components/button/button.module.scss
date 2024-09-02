@@ -1,25 +1,5 @@
-.layout {
-    position: fixed;
-    top: calc(50% - 2px);
-    left: calc(50% - 250px);
-    height: 300px;
-    width: 300px;
-    transform: rotate(45deg);
-    background-color: pink;
-    pointer-events: none;
-}
-
-.circle,.circle1 {
-    position: fixed;
-    top: calc(50% - 250px);
-    left: calc(50% - 400px);
-    width: 300px;
-    height: 300px;
-    border-radius: 100%;
-    background-color: pink;
-}
-
-.circle1 {
-    top: calc(50% - 250px);
-    left: calc(50% - 200px);
+.button {
+    outline: none;
+    border:none;
+    background-color: white;
 }

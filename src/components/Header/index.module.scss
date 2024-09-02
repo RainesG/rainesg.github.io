@@ -1,0 +1,45 @@
+.header {
+  $_self:&;
+
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgb(80, 80, 80), rgb(218, 218, 218));
+
+  &_left,
+  &_right {
+    display: flex;
+    width: 40vw;
+  }
+
+  &_left {
+    justify-content: start;
+    gap: 1rem;
+    color: white;
+
+    &_button {
+    background-color: transparent;
+    }
+  }
+
+  &_right {
+    justify-content: end;
+  }
+
+  &_icon {
+    background-color: aliceblue;
+    border-radius: 100%;
+    width: 3rem;
+    aspect-ratio: 1;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  &_right img {
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+}

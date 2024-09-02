@@ -1,7 +1,9 @@
-import styles from './footer.module.scss'
+import styles from "./footer.module.scss";
 
-const Footer=()=>{
-    return <div className={styles.footer}>浙ICP备2020041106号-1</div>
-}
+const baseClass = `footer`;
 
-export default Footer
+const Footer = () => {
+  return <div className={styles[baseClass]}>浙ICP备2020041106号-1</div>;
+};
+
+export default Footer;
