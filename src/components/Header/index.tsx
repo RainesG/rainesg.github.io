@@ -68,6 +68,11 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
               );
             })}
         </div>
+        <div
+          className={classNames({
+            [styles[`${baseClass}_layer`]]: menuVisible,
+          })}
+        ></div>
       </div>
     </div>
   );
