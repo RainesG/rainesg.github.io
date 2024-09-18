@@ -69,8 +69,8 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
             })}
         </div>
         <div
-          className={classNames({
-            [styles[`${baseClass}_layer`]]: menuVisible,
+          className={classNames(styles[`${baseClass}_layer`], {
+            [styles[`${baseClass}_layerOn`]]: menuVisible,
           })}
         ></div>
       </div>
