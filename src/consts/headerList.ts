@@ -1,30 +1,10 @@
-interface menuType {
-  menuText?: string;
-  subMenu?: menuType[];
-  pagination?: {
-    imgSrc?: string;
-  };
-}
-
-/**
- * @description: header列表
- * @param {string}itemTitle
- * @param {'list'|'button'}itemType
- * @param {menuType}baseMenu
- * @param {void}onClick
- */
-export interface headerListType {
-  itemTitle?: string;
-  itemType?: "list" | "button";
-  baseMenu?: menuType[];
-  onClick?: () => {};
-}
+import { menuListType } from "@/types/menuList";
 
 /**
  * @description: header配置
  * @param {*}
  */
-const headerList: headerListType[] = [
+const headerList: menuListType[] = [
   {
     itemTitle: "目录",
     itemType: "list",

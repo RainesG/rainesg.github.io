@@ -1,15 +1,16 @@
 import { Button } from "../button";
 import styles from "./index.module.scss";
 // import Account from "@material-design-icons/svg/round/account_circle.svg";
-import { headerListType } from "../../consts/headerList";
 import { useRef, useState } from "react";
 import classNames from "classnames";
 import useClickOutside from "../../utils/useClickOutside";
+import { menuListType } from "@/types/menuList";
+import { Menu } from "../Menu";
 
 const baseClass = `header`;
 
 export type PageHeaderType = {
-  headerList: headerListType[];
+  headerList: menuListType[];
 };
 
 const PageHeader = ({ headerList }: PageHeaderType) => {
@@ -28,6 +29,7 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
             {headerList.map(({ itemTitle, itemType, onClick }, index) => {
               return (
                 <Button
+                  ref={excludeRef}
                   type="transparent"
                   key={`${itemTitle}-${index}`}
                   label={itemTitle}
@@ -48,25 +50,12 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
           </div>
         </div>
         <div
+          ref={menuRef}
           className={classNames(styles[`${baseClass}_menu`], {
             [styles[`${baseClass}_showAnimation`]]: menuVisible,
           })}
         >
-          {headerList
-            .filter((item) => {
-              return item.itemType === "list";
-            })
-            .map((menuItem, index) => {
-              return (
-                <Button
-                  ref={excludeRef}
-                  type={"transparent"}
-                  key={`${menuItem.itemType}-${index}`}
-                >
-                  {menuItem.itemTitle}
-                </Button>
-              );
-            })}
+          <Menu menuList={headerList} />
         </div>
         <div
           className={classNames(styles[`${baseClass}_layer`], {
