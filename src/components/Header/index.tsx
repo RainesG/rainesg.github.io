@@ -2,7 +2,6 @@ import { Button } from "../button";
 import styles from "./index.module.scss";
 // import Account from "@material-design-icons/svg/round/account_circle.svg";
 import { useRef, useState } from "react";
-import classNames from "classnames";
 import useClickOutside from "../../utils/useClickOutside";
 import { menuListType } from "@/types/menuList";
 import { Menu } from "../Menu";
@@ -15,6 +14,7 @@ export type PageHeaderType = {
 
 const PageHeader = ({ headerList }: PageHeaderType) => {
   const [menuVisible, setMenuVisible] = useState<boolean>(false);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
   const excludeRef = useRef<HTMLElement>(null);
 
   const menuRef = useClickOutside(() => {
@@ -23,7 +23,7 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
 
   return (
     <div>
-      <div className={styles[baseClass]} ref={menuRef}>
+      <div className={styles[baseClass]}>
         <div className={styles[`${baseClass}_navigation`]}>
           <div className={styles[`${baseClass}_left`]}>
             {headerList.map(({ itemTitle, itemType, onClick }, index) => {
@@ -34,7 +34,8 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
                   key={`${itemTitle}-${index}`}
                   label={itemTitle}
                   onClick={() => {
-                    itemType === "list" && setMenuVisible(!menuVisible);
+                    setActiveIndex(index);
+                    itemType === "list" && setMenuVisible((prev) => !prev);
                     onClick?.();
                   }}
                   className={styles[`${baseClass}_button`]}
@@ -49,19 +50,11 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
             <img src="" alt="" />
           </div>
         </div>
-        <div
+        <Menu
+          menuList={headerList[activeIndex].baseMenu}
+          visibility={menuVisible}
           ref={menuRef}
-          className={classNames(styles[`${baseClass}_menu`], {
-            [styles[`${baseClass}_showAnimation`]]: menuVisible,
-          })}
-        >
-          <Menu menuList={headerList} />
-        </div>
-        <div
-          className={classNames(styles[`${baseClass}_layer`], {
-            [styles[`${baseClass}_layerOn`]]: menuVisible,
-          })}
-        ></div>
+        />
       </div>
     </div>
   );

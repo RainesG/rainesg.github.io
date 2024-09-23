@@ -1,6 +1,6 @@
 import PageHeader from "../../components/Header";
 import Footer from "../../components/Footer";
-import headerList from "../..//consts/headerList";
+import headerList from "../../consts/menuList";
 
 const HomePage = () => {
   return (

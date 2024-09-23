@@ -1,39 +1,72 @@
 import classNames from "classnames";
 import styles from "./index.module.scss";
-import { menuListType } from "@/types/menuList";
+import { menuType } from "@/types/menuList";
 import { Button } from "../button";
-import { RefObject } from "react";
+import { forwardRef, RefObject } from "react";
 
 export type MenuProps = {
-  menuVisible?: boolean;
-  menuList: menuListType[];
+  visibility?: boolean;
+  menuList: menuType[] | undefined;
   excludeRef?: RefObject<HTMLElement>;
+  direction?: "left" | "top" | "bottom" | "right";
+  distance?: string | number;
+  duration?: string | number;
 };
 
 const baseClass = `menu`;
 
-export const Menu = ({ menuVisible, excludeRef, menuList }: MenuProps) => {
-  return (
-    <div
-      className={classNames(styles[`${baseClass}_menu`], {
-        [styles[`${baseClass}_showAnimation`]]: menuVisible,
-      })}
-    >
-      {menuList
-        .filter((item) => {
-          return item.itemType === "list";
-        })
-        .map((menuItem, index) => {
-          return (
-            <Button
-              ref={excludeRef}
-              type={"transparent"}
-              key={`${menuItem.itemType}-${index}`}
-            >
-              {menuItem.itemTitle}
-            </Button>
-          );
-        })}
-    </div>
-  );
-};
+export const Menu = forwardRef(
+  (
+    {
+      visibility = false,
+      excludeRef,
+      menuList,
+      direction = "left",
+      distance = "30%",
+      duration = "0.6s",
+    }: MenuProps,
+    ref
+  ) => {
+    const isLandscape = direction === "left" || direction === "right";
+    const menuStyle = Object.assign(
+      {
+        [!isLandscape ? "width" : "height"]: "100%",
+        [isLandscape ? "width" : "height"]: [distance],
+        [direction]: `-${distance}`,
+        transition: `${direction} ${duration}`,
+      },
+      visibility
+        ? {
+            [direction]: 0,
+            transition: `${direction} ${duration}`,
+          }
+        : {}
+    );
+
+    return (
+      <>
+        <div
+          className={styles[`${baseClass}`]}
+          style={menuStyle}
+          ref={ref as RefObject<HTMLDivElement>}
+        >
+          {menuList?.map((menuItem, index) => {
+            return (
+              <Button
+                ref={excludeRef}
+                type={"transparent"}
+                label={menuItem.menuText}
+                key={`${menuItem.menuText}-${index}`}
+              />
+            );
+          })}
+        </div>
+        <div
+          className={classNames(styles[`${baseClass}_layer`], {
+            [styles[`${baseClass}_layerOn`]]: visibility,
+          })}
+        />
+      </>
+    );
+  }
+);

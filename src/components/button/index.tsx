@@ -4,6 +4,7 @@ import classNames from "classnames";
 interface ButtonProps {
   label?: string;
   borderRadius?: string | number;
+  textAlign?: "left" | "center" | "right";
   type: "transparent";
 }
 
@@ -15,6 +16,7 @@ export const Button = forwardRef(
       className,
       borderRadius,
       type,
+      textAlign = "left",
     }: HTMLAttributes<HTMLButtonElement> & ButtonProps,
     ref
   ) => {
@@ -24,6 +26,7 @@ export const Button = forwardRef(
           style={{
             borderRadius: borderRadius,
             backgroundColor: type === "transparent" ? "transparent" : "",
+            textAlign,
           }}
           className={classNames(styles.button, className)}
           onClick={onClick}

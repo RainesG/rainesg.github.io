@@ -1,4 +1,4 @@
-interface menuType {
+export interface menuType {
   menuText?: string;
   subMenu?: menuType[];
   pagination?: {

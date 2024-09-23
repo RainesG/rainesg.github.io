@@ -43,40 +43,4 @@
     border-radius: 100%;
     object-fit: cover;
   }
-
-  &_menu {
-    position: absolute;
-    padding-top: 80px;
-    box-sizing: border-box;
-    width: 30%;
-    height: 100dvh;
-    top: 0;
-    left: -30%;
-    transition: left 0.6s;
-    background-color: white;
-    z-index: 2;
-  }
-
-  &_showAnimation {
-    left: 0;
-    transition: left 0.6s;
-  }
-
-  &_layer {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: black;
-    opacity: 0;
-    z-index: 1;
-    pointer-events: none;
-    transition: opacity 0.6s;
-  }
-
-  &_layerOn {
-    opacity: 0.6;
-    transition: opacity 0.6s;
-  }
 }
