@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import styles from "./index.module.scss";
 import { menuType } from "@/types/menuList";
-import { Button } from "../button";
+import { Button } from "../Button";
 import { forwardRef, RefObject } from "react";
 
 export type MenuProps = {
@@ -50,16 +50,19 @@ export const Menu = forwardRef(
           style={menuStyle}
           ref={ref as RefObject<HTMLDivElement>}
         >
-          {menuList?.map((menuItem, index) => {
-            return (
-              <Button
-                ref={excludeRef}
-                type={"transparent"}
-                label={menuItem.menuText}
-                key={`${menuItem.menuText}-${index}`}
-              />
-            );
-          })}
+          <div className={styles[`${baseClass}_menuWrapper`]}>
+            {menuList?.map((menuItem, index) => {
+              return (
+                <Button
+                  ref={excludeRef}
+                  type={"transparent"}
+                  label={menuItem.menuText}
+                  key={`${menuItem.menuText}-${index}`}
+                  className={styles[`${baseClass}_button`]}
+                />
+              );
+            })}
+          </div>
         </div>
         <div
           className={classNames(styles[`${baseClass}_layer`], {

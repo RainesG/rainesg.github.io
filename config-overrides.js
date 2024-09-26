@@ -5,16 +5,16 @@ const {
   addWebpackPlugin,
 } = require("customize-cra");
 const path = require("path");
+const speedMeasurePlugin = require("speed-measure-webpack-plugin");
 
 module.exports = override(
-  {
-    allowImportingTsExtensions: true,
-  },
+  // {
+  //   allowImportingTsExtensions: true,
+  // },
   addWebpackModuleRule({
     test: /\.svg$/,
     use: "@svgr/webpack",
   }),
-  addWebpackPlugin({
-    use: "speed-measure-webpack-plugin",
-  })
+  addWebpackPlugin(new speedMeasurePlugin()),
+  addWebpackAlias({ "@": path.resolve("./src") })
 );

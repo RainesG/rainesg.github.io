@@ -15,7 +15,6 @@ const useClickOutside = (
         !(exclude.current as any).contains(e.target)
       ) {
         onTrigger?.(e);
-        console.log(ref.current, exclude.current);
       }
     },
     [exclude, onTrigger]

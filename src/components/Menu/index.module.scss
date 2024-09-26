@@ -1,3 +1,5 @@
+$animationEffect: opacity 0.7s;
+
 .menu {
   position: fixed;
   padding-top: 80px;
@@ -5,6 +7,20 @@
   top: 0;
   background-color: white;
   z-index: 2;
+
+  &_menuWrapper {
+    div {
+      opacity: 1;
+      transition: $animationEffect;
+    }
+  }
+
+  &_menuWrapper:hover {
+    div:not(:hover) {
+      opacity: 0.6;
+      transition: $animationEffect;
+    }
+  }
 
   &_layer {
     width: 100vw;
@@ -16,11 +32,11 @@
     opacity: 0;
     z-index: 1;
     pointer-events: none;
-    transition: opacity 0.6s;
+    transition: $animationEffect;
   }
 
   &_layerOn {
     opacity: 0.6;
-    transition: opacity 0.6s;
+    transition: $animationEffect;
   }
 }
