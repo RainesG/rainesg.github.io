@@ -1,0 +1,17 @@
+.imageList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  &_imageWrapper {
+    width: 20%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &_marginTop {
+    margin-top: 30px;
+  }
+}

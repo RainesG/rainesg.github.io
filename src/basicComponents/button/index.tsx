@@ -1,6 +1,6 @@
 import { forwardRef, HTMLAttributes, RefObject } from "react";
 import styles from "./button.module.scss";
-import classNames from "classnames";
+
 interface ButtonProps {
   label?: string;
   borderRadius?: string | number;
@@ -16,19 +16,19 @@ export const Button = forwardRef(
       className,
       borderRadius,
       type,
-      textAlign = "left",
+      textAlign = "center",
     }: HTMLAttributes<HTMLButtonElement> & ButtonProps,
     ref
   ) => {
     return (
-      <div>
+      <div className={className}>
         <button
           style={{
             borderRadius: borderRadius,
             backgroundColor: type === "transparent" ? "transparent" : "",
             textAlign,
           }}
-          className={classNames(styles.button, className)}
+          className={styles.button}
           onClick={onClick}
           ref={ref as RefObject<HTMLButtonElement>}
         >

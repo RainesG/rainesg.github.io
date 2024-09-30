@@ -1,0 +1,9 @@
+.content {
+  @media screen {
+    padding: 0 1rem;
+  }
+
+  & > div {
+    width: 100%;
+  }
+}

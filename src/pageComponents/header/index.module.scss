@@ -1,10 +1,15 @@
 .header {
+  width: 100%;
+  border-bottom: 1px solid #dbe2ef;
+
   &_navigation {
-    padding: 1rem;
+    padding: 0.75rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, rgb(80, 80, 80), rgb(218, 218, 218));
+    color: #112d4e;
+    // background: linear-gradient(to bottom, #112d4ec5, #b7d9ff);
+    background-color: #f9f7f7;
   }
 
   &_left,
@@ -16,18 +21,13 @@
   &_left {
     justify-content: start;
     gap: 1rem;
-    color: white;
-  }
-
-  &_button {
-    color: white;
   }
 
   &_right {
     justify-content: end;
   }
 
-  &_icon {
+  &_icon img {
     background-color: aliceblue;
     border-radius: 100%;
     width: 2rem;
