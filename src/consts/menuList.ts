@@ -4,6 +4,7 @@ import { menuListType } from "@/types/menuList";
  * @description: header配置
  * @param {*}
  */
+
 const menuList: menuListType[] = [
   {
     itemTitle: "MOVIE",
@@ -22,6 +23,13 @@ const menuList: menuListType[] = [
       { menuText: "Comedy | Horror" },
       { menuText: "Drama" },
     ],
+  },
+  {
+    itemTitle: "GALLERY",
+    itemType: "button",
+    onClick: () => {
+      console.log("test");
+    },
   },
 ];
 

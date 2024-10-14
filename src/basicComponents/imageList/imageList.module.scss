@@ -4,8 +4,8 @@
   gap: 1rem;
 
   &_imageWrapper {
-    width: 20%;
-
+    flex: 1;
+    min-width: 20%;
     img {
       width: 100%;
     }

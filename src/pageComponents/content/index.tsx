@@ -17,7 +17,7 @@ export const Content = () => {
   return (
     <div className={styles[baseClass]}>
       <Upload accept="image/*" confirmButton={true} />
-      <ImageList imageList={imageList} />
+      <ImageList imageList={imageList} row={3} />
     </div>
   );
 };

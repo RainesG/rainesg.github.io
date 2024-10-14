@@ -17,5 +17,5 @@ export interface menuListType {
   itemTitle?: string;
   itemType?: "list" | "button";
   baseMenu?: menuType[];
-  onClick?: () => {};
+  onClick?: () => void;
 }

@@ -35,5 +35,3 @@ export const getImageList = () => {
       });
   });
 };
-
-export const testExpress = instance.get("/api");

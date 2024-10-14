@@ -20,9 +20,16 @@ export interface IImage {
 export interface IImageList {
   imageList: IImage[];
   marginTop?: boolean;
+  row?: number;
+  gap?: number | string;
 }
 
-export const ImageList = ({ imageList, marginTop = true }: IImageList) => {
+export const ImageList = ({
+  imageList,
+  marginTop = true,
+  row = 4,
+  gap = "1rem",
+}: IImageList) => {
   console.log(imageList, "list");
   return (
     <div
@@ -30,9 +37,13 @@ export const ImageList = ({ imageList, marginTop = true }: IImageList) => {
         [styles[`${baseClass}_marginTop`]]: marginTop,
       })}
     >
-      {imageList.map(({ url }) => {
+      {imageList.map(({ url },index) => {
         return (
-          <div className={styles[`${baseClass}_imageWrapper`]}>
+          <div
+          key={`${baseClass}-${index}`}
+            className={styles[`${baseClass}_imageWrapper`]}
+            // style={{ width: `calc((100% - ${gap} * (${row} - 1)) / ${row})` }}
+          >
             <img src={url} alt="" />
           </div>
         );
