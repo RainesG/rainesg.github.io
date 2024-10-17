@@ -15,7 +15,7 @@ export type PageHeaderType = {
 const PageHeader = ({ headerList }: PageHeaderType) => {
   const [menuVisible, setMenuVisible] = useState<boolean>(false);
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const excludeRef = useRef<HTMLElement>(null);
+  const excludeRef = useRef<HTMLDivElement>(null);
 
   const menuRef = useClickOutside(() => {
     setMenuVisible(false);
@@ -24,17 +24,16 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
   return (
     <div className={styles[baseClass]}>
       <div className={styles[`${baseClass}_navigation`]}>
-        <div className={styles[`${baseClass}_left`]}>
+        <div className={styles[`${baseClass}_left`]} ref={excludeRef}>
           {headerList.map(({ itemTitle, itemType, onClick }, index) => {
             return (
               <Button
-                ref={excludeRef}
                 type="transparent"
                 key={`${itemTitle}-${index}`}
                 label={itemTitle}
                 onClick={() => {
                   setActiveIndex(index);
-                  itemType === "list" && setMenuVisible((prev) => !prev);
+                  itemType === "list" && setMenuVisible(true);
                   onClick?.();
                 }}
                 className={styles[`${baseClass}_button`]}

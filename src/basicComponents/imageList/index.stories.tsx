@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react/*";
 import { ImageList } from ".";
 
 const meta = {
-    title: 'BaseComponents/ImageList',
+    title: 'BaseComponents',
     component: ImageList,
     parameters: {
       // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -17,7 +17,7 @@ const meta = {
   export default meta;
   type Story = StoryObj<typeof meta>;
 
-  export const Primary: Story = {
+  export const ImageListComp: Story = {
     args: {
         imageList:[
             {

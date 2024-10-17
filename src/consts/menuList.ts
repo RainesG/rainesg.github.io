@@ -31,6 +31,20 @@ const menuList: menuListType[] = [
       console.log("test");
     },
   },
+  {
+    itemTitle: "GALLERY",
+    itemType: "button",
+    onClick: () => {
+      console.log("test");
+    },
+  },
+  {
+    itemTitle: "GALLERY",
+    itemType: "button",
+    onClick: () => {
+      console.log("test");
+    },
+  },
 ];
 
 export default menuList;

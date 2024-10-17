@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import styles from "./index.module.scss";
+import styles from "./menu.module.scss";
 import { menuType } from "@/types/menuList";
 import { Button } from "../../basicComponents/button";
 import { forwardRef, RefObject } from "react";
@@ -42,7 +42,6 @@ export const Menu = forwardRef(
           }
         : {}
     );
-
     return (
       <>
         <div
