@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import useClickOutside from "../../utils/useClickOutside";
 import { menuListType } from "@/types/menuList";
 import { Menu } from "../menu";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const baseClass = `header`;
 
@@ -18,11 +18,12 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const excludeRef = useRef<HTMLDivElement>(null);
   const navigation = useNavigate();
-
   const menuRef = useClickOutside(() => {
     setMenuVisible(false);
   }, excludeRef);
-
+  function testCall2() {
+    console.log("test");
+  }
   return (
     <div className={styles[baseClass]}>
       <div className={styles[`${baseClass}_navigation`]}>
@@ -34,6 +35,7 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
                 key={`${itemTitle}-${index}`}
                 label={itemTitle}
                 onClick={() => {
+                  testCall2();
                   setActiveIndex(index);
                   itemType === "list" && setMenuVisible(true);
                   itemType === "button" && navigation(path!);
