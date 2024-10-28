@@ -21,9 +21,7 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
   const menuRef = useClickOutside(() => {
     setMenuVisible(false);
   }, excludeRef);
-  function testCall2() {
-    console.log("test");
-  }
+
   return (
     <div className={styles[baseClass]}>
       <div className={styles[`${baseClass}_navigation`]}>
