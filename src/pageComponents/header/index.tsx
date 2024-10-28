@@ -33,7 +33,6 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
                 key={`${itemTitle}-${index}`}
                 label={itemTitle}
                 onClick={() => {
-                  testCall2();
                   setActiveIndex(index);
                   itemType === "list" && setMenuVisible(true);
                   itemType === "button" && navigation(path!);

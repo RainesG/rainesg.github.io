@@ -3,7 +3,7 @@
     "buildCommand": "npm run build-storybook",
     "devCommand": "npm run storybook",
     "installCommand": "npm install",
-    "framework": null,
+    "framework": "create-react-app",
     "outputDirectory": "./storybook-static",
     "git": {
         "deploymentEnabled": false
