@@ -1,0 +1,45 @@
+.header {
+  width: 100%;
+  border-bottom: 1px solid #dbe2ef;
+
+  &_navigation {
+    padding: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #112d4e;
+    // background: linear-gradient(to bottom, #112d4ec5, #b7d9ff);
+    background-color: #f9f7f7;
+  }
+
+  &_left,
+  &_right {
+    display: flex;
+    width: 40vw;
+  }
+
+  &_left {
+    justify-content: start;
+    gap: 1rem;
+    overflow: hidden;
+  }
+
+  &_right {
+    justify-content: end;
+  }
+
+  &_logo img {
+    background-color: aliceblue;
+    border-radius: 100%;
+    width: 2rem;
+    aspect-ratio: 1;
+    text-align: center;
+  }
+
+  &_right img {
+    width: 2rem;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+}

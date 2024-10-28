@@ -2,24 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./global.css";
 import reportWebVitals from "./reportWebVitals";
-import RootRouter from "./router";
-import { BrowserRouter } from "react-router-dom";
-import ErrorBoundary from "./ErrorBoundary";
-import { Provider } from "react-redux";
-import store from "./store";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") || document.createElement("div")
 );
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <ErrorBoundary>
-          <RootRouter />
-        </ErrorBoundary>
-      </BrowserRouter>
-    </Provider>
+    <SpeedInsights />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

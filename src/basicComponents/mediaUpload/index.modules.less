@@ -1,0 +1,83 @@
+.mediaUpload {
+  overflow: hidden;
+
+  &_scrollView {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &_scroll {
+    white-space: nowrap;
+  }
+
+  &_displayArea {
+    display: flex;
+  }
+
+  &_upload {
+    width: 90px;
+  }
+
+  &_addContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f6f7fb;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  &_picIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &_addText {
+    margin-top: 13px;
+    height: 12px;
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #a7adc0;
+    line-height: 12px;
+  }
+
+  &_imageWrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin: 0;
+    padding: 4px 4px 0 0;
+  }
+
+  &_image {
+    width: 100%;
+    height: 100%;
+    background-color: #cccccc;
+    border-radius: 5px;
+  }
+
+  &_delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+  }
+
+  &_input {
+    display: none;
+    background-color: transparent;
+  }
+
+  &_label {
+    display: grid;
+    width: 100%;
+    aspect-ratio: 1;
+  }
+}

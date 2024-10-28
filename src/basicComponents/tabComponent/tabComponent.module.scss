@@ -1,0 +1,24 @@
+.tabComponent {
+  &_titles {
+    width: max-content;
+    display: flex;
+
+    :not(:first-child) p {
+      border-left: 1px solid #ddd;
+    }
+
+    li {
+      text-align: center;
+    
+      p {
+        padding: 0 1rem;
+        margin: 0.5rem 0;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &_titleActive {
+    border-bottom: 1px solid #ddd;
+  }
+}
