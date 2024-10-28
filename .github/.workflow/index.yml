@@ -4,6 +4,9 @@ env:
   VERCEL_PROJECT_ID: prj_fBtN7HLhK1bQBrzXq7PWTdxKEIMp
 on:
   push:
+    branches:
+      - main
+      - dev
     # Pattern matched against refs/tags
     tags:
       - "feat/*" # Push events to every tag not containing /
