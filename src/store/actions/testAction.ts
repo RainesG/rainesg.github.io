@@ -1,9 +1,9 @@
 import { Dispatch } from "redux";
-import { testAPI } from "../../api";
+import { getImageList } from "@/apis/smmsApi";
 
 const testAction = () => async (dispatch: Dispatch) => {
   try {
-    const res = await testAPI();
+    const res = await getImageList();
     console.log(res);
 
     dispatch({
