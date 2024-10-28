@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - main
-      - dev
     # Pattern matched against refs/tags
     tags:
       - "feat:/*" # Push events to every tag not containing /
