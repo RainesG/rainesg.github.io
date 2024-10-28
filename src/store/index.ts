@@ -6,6 +6,7 @@ const persistConfig = {
   key: "root",
   storage: sessionStorage,
 };
+
 const myPersistReducer = persistReducer(persistConfig, RootReducer);
 
 const store = configureStore({
