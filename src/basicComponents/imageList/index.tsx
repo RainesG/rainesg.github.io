@@ -30,17 +30,16 @@ export const ImageList = ({
   row = 4,
   gap = "1rem",
 }: IImageList) => {
-  console.log(imageList, "list");
   return (
     <div
       className={classNames(styles[baseClass], {
         [styles[`${baseClass}_marginTop`]]: marginTop,
       })}
     >
-      {imageList.map(({ url },index) => {
+      {imageList.map(({ url }, index) => {
         return (
           <div
-          key={`${baseClass}-${index}`}
+            key={`${baseClass}-${index}`}
             className={styles[`${baseClass}_imageWrapper`]}
             // style={{ width: `calc((100% - ${gap} * (${row} - 1)) / ${row})` }}
           >

@@ -7,10 +7,8 @@ export const useClientRect = (): [DOMRect, RefCallback<Element>] => {
     (node: Element) => {
       if (node !== null) {
         setRect(node.getBoundingClientRect());
-        console.log('node')
       } else {
         setRect(initDOMRect);
-        console.log('null')
       }
     },
     [initDOMRect]

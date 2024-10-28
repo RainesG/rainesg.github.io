@@ -9,14 +9,14 @@ $animationEffect: opacity 0.7s;
   z-index: 2;
 
   &_menuWrapper {
-    div {
+    & > div {
       opacity: 1;
       transition: $animationEffect;
     }
   }
 
   &_menuWrapper:hover {
-    div:not(:hover) {
+    & > div:not(:hover) {
       opacity: 0.6;
       transition: $animationEffect;
     }

@@ -16,6 +16,7 @@ export interface menuType {
 export interface menuListType {
   itemTitle?: string;
   itemType?: "list" | "button";
+  path?: string;
   baseMenu?: menuType[];
   onClick?: () => void;
 }

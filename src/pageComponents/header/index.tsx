@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import useClickOutside from "../../utils/useClickOutside";
 import { menuListType } from "@/types/menuList";
 import { Menu } from "../menu";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 const baseClass = `header`;
 
@@ -16,6 +17,7 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
   const [menuVisible, setMenuVisible] = useState<boolean>(false);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const excludeRef = useRef<HTMLDivElement>(null);
+  const navigation = useNavigate();
 
   const menuRef = useClickOutside(() => {
     setMenuVisible(false);
@@ -25,7 +27,7 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
     <div className={styles[baseClass]}>
       <div className={styles[`${baseClass}_navigation`]}>
         <div className={styles[`${baseClass}_left`]} ref={excludeRef}>
-          {headerList.map(({ itemTitle, itemType, onClick }, index) => {
+          {headerList.map(({ itemTitle, itemType, onClick, path }, index) => {
             return (
               <Button
                 type="transparent"
@@ -34,6 +36,7 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
                 onClick={() => {
                   setActiveIndex(index);
                   itemType === "list" && setMenuVisible(true);
+                  itemType === "button" && navigation(path!);
                   onClick?.();
                 }}
                 className={styles[`${baseClass}_button`]}
@@ -43,7 +46,12 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
             );
           })}
         </div>
-        <div className={styles[`${baseClass}_icon`]}>
+        <div
+          className={styles[`${baseClass}_logo`]}
+          onClick={() => {
+            navigation("/");
+          }}
+        >
           <img
             src="https://s2.loli.net/2024/09/29/mzJCAjK1nVFxd7p.png"
             alt=""

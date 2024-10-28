@@ -21,9 +21,7 @@ export const Upload = ({
 }: InputHTMLAttributes<HTMLInputElement> & IUpload) => {
   const [uploadFile, setUploadFile] = useState<File>();
   const Upload = () => {
-    uploadImg(uploadFile!).then((res) => {
-      console.log(res.data.success);
-    });
+    uploadImg(uploadFile!).then((res) => {});
   };
 
   return (

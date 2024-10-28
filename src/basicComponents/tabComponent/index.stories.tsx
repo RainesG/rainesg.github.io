@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react/*";
 import TabComponent from ".";
+
 const meta = {
   title: "BaseComponents",
   component: TabComponent,
@@ -13,9 +14,7 @@ export const TabComp: Story = {
     tabs: [
       {
         title: "tab1",
-        onClick: () => {
-          console.log("click~");
-        },
+        onClick: () => {},
         children: "test",
       },
       { title: "tab2" },

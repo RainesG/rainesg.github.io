@@ -3,7 +3,6 @@ import instance from "./instance";
 
 export const uploadImg = (arg: File) => {
   return new Promise<AxiosResponse>((resolve, reject) => {
-    console.log(arg, "arg");
     instance
       .post(
         `api/upload`,

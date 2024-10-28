@@ -27,23 +27,18 @@ const menuList: menuListType[] = [
   {
     itemTitle: "GALLERY",
     itemType: "button",
-    onClick: () => {
-      console.log("test");
-    },
+    path: "/gallery",
+    onClick: () => {},
   },
   {
-    itemTitle: "GALLERY",
+    itemTitle: "NONE",
     itemType: "button",
-    onClick: () => {
-      console.log("test");
-    },
+    onClick: () => {},
   },
   {
-    itemTitle: "GALLERY",
+    itemTitle: "LAST",
     itemType: "button",
-    onClick: () => {
-      console.log("test");
-    },
+    onClick: () => {},
   },
 ];
 

@@ -9,7 +9,7 @@ const baseClass = `tabComponent`;
 const TabComponent = ({ tabs }: ITabComponent) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [measureRect, measureRef] = useClientRect();
-  console.log(measureRect.height);
+
   return (
     <div className={styles[baseClass]}>
       <ul className={styles[`${baseClass}_titles`]}>
