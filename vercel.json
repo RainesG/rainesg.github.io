@@ -7,5 +7,6 @@
     "outputDirectory": "./storybook-static",
     "git": {
         "deploymentEnabled": false
-    }
+    },
+    "cleanUrls": true
 }
