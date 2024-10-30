@@ -1,5 +1,5 @@
 import testAction from "../../store/actions/testAction";
-import { useAppDispatch } from "../../hooks";
+import { useAppDispatch } from "../../reduxHook";
 import { useEffect, useState } from "react";
 import InputComp from "../../components/InputComp";
 
@@ -10,7 +10,7 @@ const PageBlog = () => {
     { name: "bbb", type: "b01" },
     { name: "ccc", type: "c01" },
   ]);
-  
+
   useEffect(() => {
     dispatch(testAction());
   });
