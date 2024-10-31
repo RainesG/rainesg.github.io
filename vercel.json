@@ -8,5 +8,5 @@
     "git": {
         "deploymentEnabled": true
     },
-    "cleanUrls": true
+    "cleanUrls": false
 }

@@ -17,12 +17,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "../PersonalProject",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "types", "config", "dist", "*.js"],
-  "compileOnSave": false
+  "compileOnSave": true
 }
