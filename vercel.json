@@ -4,7 +4,7 @@
     "devCommand": "npm run storybook",
     "installCommand": "npm install",
     "framework": "create-react-app",
-    "outputDirectory": "./build",
+    "outputDirectory": "./builstorybook-staticd",
     "git": {
         "deploymentEnabled": true
     },
