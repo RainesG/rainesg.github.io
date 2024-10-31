@@ -37,13 +37,13 @@ jobs:
         run: ${{steps.packageManagemer.outputs.manager}} run ${{ steps.packageManagemer.outputs.build }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./build
+        # with:
+        #   path: ./build
   # Deployment job
   deployment:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      # url: ${{ steps.deployment.outputs.page_url }}
     permissions:
       id-token: write
       pages: write
