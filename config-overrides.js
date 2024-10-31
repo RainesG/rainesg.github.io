@@ -18,5 +18,5 @@ module.exports = override(
   }),
   addWebpackPlugin(new speedMeasurePlugin()),
   addWebpackAlias({ "@": path.resolve("./src") }),
-  setWebpackPublicPath("./")
+  setWebpackPublicPath("/PersonalProject/")
 );
