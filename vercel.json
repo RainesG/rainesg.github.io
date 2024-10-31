@@ -6,7 +6,7 @@
     "framework": "create-react-app",
     "outputDirectory": "./storybook-static",
     "git": {
-        "deploymentEnabled": false
+        "deploymentEnabled": true
     },
     "cleanUrls": true
 }
