@@ -55,7 +55,8 @@
     "build-storybook": "storybook build",
     "prepare": "husky",
     "lint": "eslint",
-    "commitlint": "commitlint"
+    "commitlint": "commitlint",
+    "commit": "cz"
   },
   "eslintConfig": {
     "extends": [
@@ -90,10 +91,19 @@
     "@storybook/react-webpack5": "^8.3.5",
     "@storybook/test": "^8.3.5",
     "@types/styled-components": "^5.1.26",
+    "cz-customizable": "^7.2.1",
     "eslint-plugin-local-rules": "file:./eslintRules/index.ts",
     "eslint-plugin-storybook": "^0.9.0",
     "husky": "^9.1.6",
     "prop-types": "^15.8.1",
     "storybook": "^8.3.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-config.cjs"
+    }
   }
 }
