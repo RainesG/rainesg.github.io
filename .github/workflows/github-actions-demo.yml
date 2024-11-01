@@ -6,6 +6,7 @@ env:
 on: push
 jobs:
   LintCommitMessages:
+    # commitizen 校验以后不符合规范的commit无法提交, this job can be ignored
     runs-on: ubuntu-latest
     permissions:
       contents: read
