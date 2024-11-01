@@ -5,19 +5,15 @@ env:
 
 on: push
 jobs:
-  Commitlint:
+  LintCommitMessages:
     runs-on: ubuntu-latest
+    on: [pull_request]
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
-      - run: npm install
-      - name: Add dependencies for commitlint action
-        # $GITHUB_WORKSPACE is the path to your repository
-        run: echo "::set-env name=NODE_PATH::$GITHUB_WORKSPACE/node_modules"
-      # Now the commitlint action will run considering its own dependencies and yours as well 🚀
-      - uses: wagoid/commitlint-github-action@v4
+      - uses: wagoid/commitlint-github-action@v6
 
   Build_Pages:
     runs-on: ubuntu-latest
