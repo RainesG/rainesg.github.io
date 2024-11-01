@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "main": "index.tsx",
   "private": true,
-  "type": "module",
   "dependencies": {
     "@material-design-icons/svg": "^0.14.13",
     "@reduxjs/toolkit": "^2.3.0",
