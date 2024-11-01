@@ -1,4 +1,4 @@
-import { menuListType } from "@/types/menuList";
+import { menuListType } from "types/menuList";
 
 /**
  * @description: header配置

@@ -51,7 +51,9 @@
     "eject": "react-scripts eject",
     "server": "node server/app.js",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky",
+    "lint": "eslint"
   },
   "eslintConfig": {
     "extends": [
@@ -86,6 +88,7 @@
     "@types/styled-components": "^5.1.26",
     "eslint-plugin-local-rules": "file:./eslintRules/index.ts",
     "eslint-plugin-storybook": "^0.9.0",
+    "husky": "^9.1.6",
     "prop-types": "^15.8.1",
     "storybook": "^8.3.5"
   }

@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 // import Account from "@material-design-icons/svg/round/account_circle.svg";
 import { useRef, useState } from "react";
 import useClickOutside from "../../utils/useClickOutside";
-import { menuListType } from "@/types/menuList";
+import { menuListType } from "types/menuList";
 import { Menu } from "../menu";
 import { useNavigate } from "react-router-dom";
 

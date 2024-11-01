@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import styles from "./menu.module.scss";
-import { menuType } from "@/types/menuList";
+import { menuType } from "types/menuList";
 import { Button } from "../../basicComponents/button";
 import { forwardRef, RefObject, useMemo, useState } from "react";
 
