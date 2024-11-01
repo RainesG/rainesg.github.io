@@ -17,7 +17,6 @@
     "@types/node": "^18.11.11",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
-    "@types/redux": "^3.6.0",
     "@vercel/speed-insights": "^1.0.14",
     "ali-oss": "^6.21.0",
     "axios": "^1.7.7",

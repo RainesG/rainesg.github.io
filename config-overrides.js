@@ -4,9 +4,9 @@ const {
   addWebpackModuleRule,
   addWebpackPlugin,
   setWebpackPublicPath,
-} = require("customize-cra");
-const path = require("path");
-const speedMeasurePlugin = require("speed-measure-webpack-plugin");
+} = import("customize-cra");
+const path = import("path");
+const speedMeasurePlugin = import("speed-measure-webpack-plugin");
 
 module.exports = override(
   // {
