@@ -5,6 +5,20 @@ env:
 
 on: push
 jobs:
+  Commitlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+      - run: npm install
+      - name: Add dependencies for commitlint action
+        # $GITHUB_WORKSPACE is the path to your repository
+        run: echo "::set-env name=NODE_PATH::$GITHUB_WORKSPACE/node_modules"
+      # Now the commitlint action will run considering its own dependencies and yours as well 🚀
+      - uses: wagoid/commitlint-github-action@v4
+
   Build_Pages:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && startsWith(github.event.head_commit.message, 'feat:')
@@ -40,10 +54,10 @@ jobs:
         with:
           path: ./build
   # Deployment job
-  deployment:
+  Deployment:
     environment:
       name: github-pages
-      # url: ${{ steps.deployment.outputs.page_url }}
+      # url: ${{ steps.Deployment.outputs.page_url }}
     permissions:
       id-token: write
       pages: write
@@ -51,7 +65,7 @@ jobs:
     needs: Build_Pages
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: Deployment
         uses: actions/deploy-pages@v4
       # - name: Install Vercel CLI
       #   run: npm install --global vercel@latest
