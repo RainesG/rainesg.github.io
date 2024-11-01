@@ -21,7 +21,7 @@ export const Upload = ({
 }: InputHTMLAttributes<HTMLInputElement> & IUpload) => {
   const [uploadFile, setUploadFile] = useState<File>();
   const Upload = () => {
-    uploadImg(uploadFile!).then((res) => {});
+    uploadImg(uploadFile!).then((res) => { });
   };
 
   return (
@@ -42,7 +42,6 @@ export const Upload = ({
       <p className={styles[`${baseClass}_textContent`]}>上传图片</p>
       {confirmButton && (
         <Button
-          type={"transparent"}
           onClick={Upload}
           className={classNames(styles[`${baseClass}_button`], buttonClassName)}
         >

@@ -2,24 +2,24 @@ import { Meta, StoryObj } from "@storybook/react/*";
 import { ImageList } from ".";
 
 const meta = {
-    title: 'BaseComponents',
+    title: 'Image list',
     component: ImageList,
     parameters: {
-      // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-      layout: 'centered',
+        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        layout: 'centered',
     },
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ['autodocs'],
     // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
     args: { imageList: [] },
-  } satisfies Meta<typeof ImageList>;
-  
-  export default meta;
-  type Story = StoryObj<typeof meta>;
+} satisfies Meta<typeof ImageList>;
 
-  export const ImageListComp: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const ImageListComp: Story = {
     args: {
-        imageList:[
+        imageList: [
             {
                 "width": 736,
                 "height": 1472,
@@ -87,4 +87,4 @@ const meta = {
             }
         ]
     },
-  };
+};

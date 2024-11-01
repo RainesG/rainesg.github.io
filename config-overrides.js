@@ -16,6 +16,17 @@ module.exports = override(
     test: /\.svg$/,
     use: "@svgr/webpack",
   }),
+  addWebpackModuleRule({
+    test: /\.s[ac]ss$/i,
+    use: [
+      // Creates `style` nodes from JS strings
+      "style-loader",
+      // Translates CSS into CommonJS
+      "css-loader",
+      // Compiles Sass to CSS
+      "sass-loader",
+    ],
+  }),
   addWebpackPlugin(new speedMeasurePlugin()),
   addWebpackAlias({ "@": path.resolve("./src") }),
   // setWebpackPublicPath("./")

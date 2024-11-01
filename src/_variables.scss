@@ -1,0 +1,56 @@
+// base color
+$grey: #e0e0e0;
+$white: #fff;
+$primary: #1976d2;
+$secondary: #dc004e;
+$disabledBg: rgba(0, 0, 0, 0.12);
+$disabledContent: rgba(0, 0, 0, 0.26);
+$black: #1d1d1d;
+$blue: #324157;
+$light-blue: #3a71a8;
+$red: #c03639;
+$pink: #e65d6e;
+$green: #30b08f;
+$tiffany: #4ab7bd;
+$yellow: #fec171;
+$panGreen: #30b08f;
+
+// hover color
+$hoverBase: #000;
+$hoverGrey: color-mix(in srgb, $grey 90%, $hoverBase);
+$hoverPrimary: color-mix(in srgb, $primary 90%, $hoverBase);
+$hoverSecondary: color-mix(in srgb, $secondary 90%, $hoverBase);
+
+// visiual effect
+$sBoxShadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+$mBoxShadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+// animation
+$cubicBezier: cubic-bezier(0.4, 0, 0.2, 1);
+$duration: 250ms;
+
+// 默认菜单主题风格
+$base-menu-color: #bfcbd9;
+$base-menu-color-active: #f4f4f5;
+$base-menu-background: #304156;
+$base-logo-title-color: #ffffff;
+
+// 用于代码中调用
+// :export {
+// menuColor: $base-menu-color;
+// menuLightColor: $base-menu-light-color;
+// menuColorActive: $base-menu-color-active;
+// menuBackground: $base-menu-background;
+// menuLightBackground: $base-menu-light-background;
+// menuLightBackgroundMy: $base-menu-light-background-my;
+// subMenuBackground: $base-sub-menu-background;
+// subMenuHover: $base-sub-menu-hover;// sideBarWidth: $base-sidebar-width;
+// logoTitleColor: $base-logo-title-color;
+// logoLightTitleColor: $base-logo-light-title-color;
+// lightGrey: $lightGrey
+// black: $black;
+// }

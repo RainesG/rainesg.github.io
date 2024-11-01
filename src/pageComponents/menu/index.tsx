@@ -55,9 +55,9 @@ export const Menu = forwardRef(
       },
       visibility
         ? {
-            [direction]: destinyPosition,
-            transition: `${direction} ${duration}`,
-          }
+          [direction]: destinyPosition,
+          transition: `${direction} ${duration}`,
+        }
         : {}
     );
 
@@ -74,7 +74,6 @@ export const Menu = forwardRef(
                 <div key={`${menuText}-${index}`}>
                   <Button
                     ref={excludeRef}
-                    type={"transparent"}
                     label={menuText}
                     className={styles[`${baseClass}_button`]}
                     onClick={() => {

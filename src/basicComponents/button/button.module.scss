@@ -1,11 +1,47 @@
+@use '../../variables'as v;
+
 .button {
   outline: none;
   border: none;
-  background-color: white;
+  font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   cursor: pointer;
   text-align: left;
-  color: inherit;
-  width: 100%;
+  box-shadow: v.$sBoxShadow;
+  transition: background-color v.$duration v.$cubicBezier 0ms, box-shadow v.$duration v.$cubicBezier 0ms, border 250ms v.$cubicBezier 0ms;
+
+  &_default {
+    background-color: v.$grey;
+    color: v.$black;
+
+    &:hover {
+      box-shadow: v.$mBoxShadow;
+      background-color: v.$hoverGrey;
+    }
+  }
+
+  &_primary {
+    background-color: v.$primary;
+    color: v.$white;
+
+    &:hover {
+      background-color: v.$hoverPrimary;
+    }
+  }
+
+  &_secondary {
+    background-color: v.$secondary;
+    color: v.$white;
+
+    &:hover {
+      background-color: v.$hoverSecondary;
+    }
+  }
+
+  &_disabled {
+    background-color: v.$disabledBg;
+    color: v.$disabledContent;
+    pointer-events: none;
+  }
 }

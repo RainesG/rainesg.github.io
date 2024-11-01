@@ -36,7 +36,7 @@ export const MediaUpload = ({
 }: IMediaUpload & InputHTMLAttributes<HTMLDivElement>) => {
   const [displayList] = useState<string[]>(exsistValue || []);
 
-  const deleteIndex = useCallback(() => {}, []);
+  const deleteIndex = useCallback(() => { }, []);
 
   return (
     <>

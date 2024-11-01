@@ -29,7 +29,6 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
           {headerList.map(({ itemTitle, itemType, onClick, path }, index) => {
             return (
               <Button
-                type="transparent"
                 key={`${itemTitle}-${index}`}
                 label={itemTitle}
                 onClick={() => {
