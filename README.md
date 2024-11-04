@@ -1,3 +1,5 @@
+[![Production Tag Deployment](https://github.com/RainesG/rainesg.github.io/actions/workflows/github-actions.yml/badge.svg?branch=main)](https://github.com/RainesG/rainesg.github.io/actions/workflows/github-actions.yml)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
