@@ -16,17 +16,18 @@ const baseClass = `button`;
 export const Button = forwardRef(
   (
     {
-      variant = 'text',
-      onClick,
       label,
-      className,
+      variant = 'text',
       borderRadius,
+      className,
       type = 'default',
       linkDestination,
-      disableElevation = false
+      disableElevation = false,
+      onClick
     }: HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> & ButtonProps,
     ref
   ) => {
+
     return (
       <div className={className}>
         {type == 'link' ? (

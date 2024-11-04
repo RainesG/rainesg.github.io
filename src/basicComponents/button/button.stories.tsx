@@ -22,9 +22,9 @@ export const Button: Story = {
     args: {
         onClick: () => { },
         label: "BUTTON",
+        type: 'default',
         // className: "",
         // borderRadius: 20,
-        type: 'default',
         // textAlign: "center",
     },
 }
