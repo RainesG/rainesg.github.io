@@ -1,12 +1,12 @@
 import { getImageList } from "@/apis/smmsApi";
-import { IImage, ImageList } from "@/basicComponents/imageList";
+import { type ImageListType, ImageList } from "raines-basic-components";
 import { Upload } from "@/basicComponents/upload";
 import { useState, useEffect } from "react";
 import styles from "./content.module.scss";
 const baseClass = `content`;
 
 export const Content = () => {
-  const [imageList, setImageList] = useState<IImage[]>([]);
+  const [imageList, setImageList] = useState<ImageListType[]>([]);
 
   useEffect(() => {
     getImageList().then((res) => {

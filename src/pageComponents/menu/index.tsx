@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import styles from "./menu.module.scss";
 import { menuType } from "types/menuList";
-import { Button } from "../../basicComponents/button";
+import { Button } from "raines-basic-components";
 import { forwardRef, RefObject, useMemo, useState } from "react";
 
 export type MenuProps = {

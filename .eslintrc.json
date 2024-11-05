@@ -1,5 +1,11 @@
 {
-    "rules": {
-        
-    }
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2020": true
+  }
 }

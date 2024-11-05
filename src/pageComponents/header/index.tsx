@@ -1,4 +1,4 @@
-import { Button } from "../../basicComponents/button";
+import { Button } from "raines-basic-components";
 import styles from "./index.module.scss";
 // import Account from "@material-design-icons/svg/round/account_circle.svg";
 import { useRef, useState } from "react";
