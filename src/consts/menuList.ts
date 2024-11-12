@@ -1,4 +1,4 @@
-import { menuListType } from "types/menuList";
+import { menuListType } from 'types/menuList';
 
 /**
  * @description: header配置
@@ -7,37 +7,37 @@ import { menuListType } from "types/menuList";
 
 const menuList: menuListType[] = [
   {
-    itemTitle: "MOVIE",
-    itemType: "list",
+    itemTitle: 'MOVIE',
+    itemType: 'list',
     baseMenu: [
       {
-        menuText: "Action | Crime",
-        subMenu: [{ menuText: "节日甄礼", pagination: { imgSrc: "" } }],
+        menuText: 'Action | Crime',
+        subMenu: [{ menuText: '节日甄礼', pagination: { imgSrc: '' } }],
       },
-      { menuText: "Comedy" },
-      { menuText: "Drama | Romance" },
-      { menuText: "Drama | War" },
+      { menuText: 'Comedy' },
+      { menuText: 'Drama | Romance' },
+      { menuText: 'Drama | War' },
       {
-        menuText: "Comedy | Drama | Romance",
+        menuText: 'Comedy | Drama | Romance',
       },
-      { menuText: "Comedy | Horror" },
-      { menuText: "Drama" },
+      { menuText: 'Comedy | Horror' },
+      { menuText: 'Drama' },
     ],
   },
   {
-    itemTitle: "GALLERY",
-    itemType: "button",
-    path: "/gallery",
+    itemTitle: 'GALLERY',
+    itemType: 'button',
+    path: '/gallery',
     onClick: () => {},
   },
   {
-    itemTitle: "NONE",
-    itemType: "button",
+    itemTitle: 'NONE',
+    itemType: 'button',
     onClick: () => {},
   },
   {
-    itemTitle: "LAST",
-    itemType: "button",
+    itemTitle: 'LAST',
+    itemType: 'button',
     onClick: () => {},
   },
 ];

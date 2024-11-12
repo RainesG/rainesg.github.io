@@ -1,2 +1,2 @@
-declare module "*.svg";
-declare module "classname";
+declare module '*.svg';
+declare module 'classname';

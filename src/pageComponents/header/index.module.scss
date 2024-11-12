@@ -1,6 +1,10 @@
 .header {
   width: 100%;
-  border-bottom: 1px solid #dbe2ef;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(8px);
+  z-index: 999;
 
   &_navigation {
     padding: 0.75rem;
@@ -9,7 +13,7 @@
     align-items: center;
     color: #112d4e;
     // background: linear-gradient(to bottom, #112d4ec5, #b7d9ff);
-    background-color: #f9f7f7;
+    // background-color: #f9f7f7;
   }
 
   &_left,

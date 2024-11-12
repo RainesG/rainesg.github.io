@@ -5,14 +5,12 @@ import "raines-basic-components/dist/index.css"
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") || document.createElement("div")
 );
 root.render(
   <React.StrictMode>
-    <SpeedInsights />
     <RouterProvider router={router} />
   </React.StrictMode>
 );

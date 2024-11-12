@@ -1,4 +1,4 @@
-import { RefCallback, useCallback, useMemo, useState } from "react";
+import { RefCallback, useCallback, useMemo, useState } from 'react';
 
 export const useClientRect = (): [DOMRect, RefCallback<Element>] => {
   const initDOMRect = useMemo(() => new DOMRect(0), []);

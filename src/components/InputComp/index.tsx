@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   width: 500px;
@@ -17,17 +17,17 @@ const InputComp = (dataIn: any) => {
   return (
     <>
       <Wrapper>
-        <label htmlFor="name">姓名</label>
+        <label htmlFor='name'>姓名</label>
         <Input
-          id="name"
+          id='name'
           placeholder={name}
           onBlur={(e) => {
             modifyData(e.target.value, type);
           }}
         />
-        <label htmlFor="type">型号</label>
+        <label htmlFor='type'>型号</label>
         <Input
-          id="type"
+          id='type'
           placeholder={type}
           onBlur={(e) => {
             modifyData(e.target.value);

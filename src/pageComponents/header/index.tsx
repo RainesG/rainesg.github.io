@@ -1,11 +1,10 @@
-import { Button } from "raines-basic-components";
-import styles from "./index.module.scss";
-// import Account from "@material-design-icons/svg/round/account_circle.svg";
-import { useRef, useState } from "react";
-import useClickOutside from "../../utils/useClickOutside";
-import { menuListType } from "types/menuList";
-import { Menu } from "../menu";
-import { useNavigate } from "react-router-dom";
+import { Button } from 'raines-basic-components';
+import { useRef, useState } from 'react';
+import useClickOutside from '../../utils/useClickOutside';
+import { menuListType } from 'types/menuList';
+import { Menu } from '../menu';
+import { useNavigate } from 'react-router-dom';
+import styles from './index.module.scss';
 
 const baseClass = `header`;
 
@@ -22,8 +21,10 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
     setMenuVisible(false);
   }, excludeRef);
 
+  console.log(styles);
+
   return (
-    <div className={styles[baseClass]}>
+    <div className={styles[`${baseClass}`]}>
       <div className={styles[`${baseClass}_navigation`]}>
         <div className={styles[`${baseClass}_left`]} ref={excludeRef}>
           {headerList.map(({ itemTitle, itemType, onClick, path }, index) => {
@@ -33,13 +34,13 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
                 label={itemTitle}
                 onClick={() => {
                   setActiveIndex(index);
-                  itemType === "list" && setMenuVisible(true);
-                  itemType === "button" && navigation(path!);
+                  itemType === 'list' && setMenuVisible(true);
+                  itemType === 'button' && navigation(path!);
                   onClick?.();
                 }}
                 className={styles[`${baseClass}_button`]}
               >
-                <img src={itemType === "list" ? "list" : "button"} alt="" />
+                <img src={itemType === 'list' ? 'list' : 'button'} alt='' />
               </Button>
             );
           })}
@@ -47,16 +48,16 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
         <div
           className={styles[`${baseClass}_logo`]}
           onClick={() => {
-            navigation("/");
+            navigation('/');
           }}
         >
           <img
-            src="https://s2.loli.net/2024/09/29/mzJCAjK1nVFxd7p.png"
-            alt=""
+            src='https://s2.loli.net/2024/09/29/mzJCAjK1nVFxd7p.png'
+            alt=''
           />
         </div>
         <div className={styles[`${baseClass}_right`]}>
-          <img src="" alt="" />
+          <img src='' alt='' />
         </div>
       </div>
       <Menu
@@ -69,3 +70,6 @@ const PageHeader = ({ headerList }: PageHeaderType) => {
 };
 
 export default PageHeader;
+function useEffect(arg0: () => () => void, arg1: any[]) {
+  throw new Error('Function not implemented.');
+}

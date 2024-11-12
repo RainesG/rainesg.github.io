@@ -1,14 +1,15 @@
-import classNames from "classnames";
-import styles from "./menu.module.scss";
-import { menuType } from "types/menuList";
-import { Button } from "raines-basic-components";
-import { forwardRef, RefObject, useMemo, useState } from "react";
+import classNames from 'classnames';
+import styles from './menu.module.scss';
+import { menuType } from 'types/menuList';
+import { Button } from 'raines-basic-components';
+import { forwardRef, RefObject, useEffect, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 export type MenuProps = {
   visibility?: boolean;
   menuList: menuType[] | undefined;
   excludeRef?: RefObject<HTMLElement>;
-  direction?: "left" | "top" | "bottom" | "right";
+  direction?: 'left' | 'top' | 'bottom' | 'right';
   menuWidth?: string | number;
   distance?: string | number;
   duration?: string | number;
@@ -23,19 +24,19 @@ export const Menu = forwardRef(
       visibility = false,
       excludeRef,
       menuList,
-      direction = "left",
-      distance = "30%",
-      menuWidth = "30%",
-      duration = "0.6s",
+      direction = 'left',
+      distance = '30%',
+      menuWidth = '30%',
+      duration = '0.6s',
       level = 1,
     }: MenuProps,
     ref
   ) => {
     const [subMenuVisible, setSubMenuVisible] = useState<boolean>(false);
-    const isLandscape = direction === "left" || direction === "right";
+    const isLandscape = direction == 'top' || direction === 'bottom';
     const [myLevel, setLevel] = useState<number>(level);
     const destinyPosition = useMemo(() => {
-      if (typeof distance === "number") {
+      if (typeof distance === 'number') {
         return distance * (level - 1);
       } else {
         const numberPart = parseFloat(distance) * (level - 1);
@@ -48,16 +49,16 @@ export const Menu = forwardRef(
 
     const menuStyle = Object.assign(
       {
-        [!isLandscape ? "width" : "height"]: "100%",
-        [isLandscape ? "width" : "height"]: [menuWidth],
+        [isLandscape ? 'width' : 'height']: isLandscape ? '100vw' : '100vh',
+        [!isLandscape ? 'width' : 'height']: [menuWidth],
         [direction]: `-${menuWidth}`,
         transition: `${direction} ${duration}`,
       },
       visibility
         ? {
-          [direction]: destinyPosition,
-          transition: `${direction} ${duration}`,
-        }
+            [direction]: destinyPosition,
+            transition: `${direction} ${duration}`,
+          }
         : {}
     );
 
@@ -96,11 +97,14 @@ export const Menu = forwardRef(
             })}
           </div>
         </div>
-        <div
-          className={classNames(styles[`${baseClass}_layer`], {
-            [styles[`${baseClass}_layerOn`]]: visibility || subMenuVisible,
-          })}
-        />
+        {createPortal(
+          <div
+            className={classNames('maskLayer', {
+              maskLayerOn: visibility || subMenuVisible,
+            })}
+          />,
+          document.getElementById('root') || document.body
+        )}
       </>
     );
   }

@@ -1,10 +1,10 @@
-import { InputHTMLAttributes, ReactNode, useCallback, useState } from "react";
-import styles from "./index.modules.less";
-import classNames from "classnames";
+import { InputHTMLAttributes, ReactNode, useCallback, useState } from 'react';
+import styles from './index.modules.scss';
+import classNames from 'classnames';
 
 interface IMediaUpload {
   children?: ReactNode;
-  type?: "image" | "video";
+  type?: 'image' | 'video';
   finish?: (arg: string[]) => void;
   onClick?: (event: any) => void;
   className?: string;
@@ -36,7 +36,7 @@ export const MediaUpload = ({
 }: IMediaUpload & InputHTMLAttributes<HTMLDivElement>) => {
   const [displayList] = useState<string[]>(exsistValue || []);
 
-  const deleteIndex = useCallback(() => { }, []);
+  const deleteIndex = useCallback(() => {}, []);
 
   return (
     <>
@@ -55,13 +55,13 @@ export const MediaUpload = ({
                 >
                   <img
                     src={value}
-                    alt=""
+                    alt=''
                     className={styles[`${baseClass}_image`]}
                   />
                   {deleteButton && (
                     <img
-                      src={""}
-                      alt=""
+                      src={''}
+                      alt=''
                       className={styles[`${baseClass}_delete`]}
                       onClick={() => deleteIndex()}
                     />
@@ -72,25 +72,25 @@ export const MediaUpload = ({
             <div className={styles[`${baseClass}_upload`]}>
               <input
                 className={styles[`${baseClass}_input`]}
-                type="file"
+                type='file'
                 accept={`${type}/*`}
-                id="uploadInput"
+                id='uploadInput'
                 onChange={(event) => {
-                  finish?.(["e"]);
+                  finish?.(['e']);
                   if (!event.target.files?.length) return;
                 }}
               />
               <label
                 className={styles[`${baseClass}_label`]}
-                htmlFor="uploadInput"
+                htmlFor='uploadInput'
                 onClick={onClick}
               >
                 {children ||
                   (displayList.length < count && (
                     <div className={styles[`${baseClass}_addContent`]}>
                       <img
-                        src={""}
-                        alt=""
+                        src={''}
+                        alt=''
                         className={styles[`${baseClass}_picIcon`]}
                       />
                       {showCount && (

@@ -1,7 +1,7 @@
-import { ReactNode, useState } from "react";
-import styles from "./tabComponent.module.scss";
-import classNames from "classnames";
-import { useClientRect } from "@/hooks/useMeasure";
+import { ReactNode, useState } from 'react';
+import styles from './tabComponent.module.scss';
+import classNames from 'classnames';
+import { useClientRect } from '@/hooks/useMeasure';
 interface ITabComponent {
   tabs: { title: string; onClick?: () => void; children?: ReactNode | null }[];
 }
@@ -11,7 +11,7 @@ const TabComponent = ({ tabs }: ITabComponent) => {
   const [measureRect, measureRef] = useClientRect();
 
   return (
-    <div className={styles[baseClass]}>
+    <div className={styles[`${baseClass}`]}>
       <ul className={styles[`${baseClass}_titles`]}>
         {tabs.map(({ title, onClick }, index) => {
           return (
