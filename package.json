@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-design-icons/svg": "^0.14.13",
     "@reduxjs/toolkit": "^2.3.0",
+    "@stencil/core": "^2.9.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -21,6 +22,8 @@
     "axios": "^1.7.7",
     "classname": "^0.0.0",
     "classnames": "^2.5.1",
+    "client": "link:@stencil/core/internal/client",
+    "core": "link:@types/stencil/core",
     "css-loader": "^6.11.0",
     "customize-cra": "^1.0.0",
     "express": "^4.21.1",
