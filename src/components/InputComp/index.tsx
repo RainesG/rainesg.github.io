@@ -9,32 +9,52 @@ const Wrapper = styled.div`
 
 const Input = styled.input`
   border-radius: 0.2rem;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  &:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+  }
+  &:hover {
+    border-color: #666;
+  }
 `;
 
-const InputComp = (dataIn: any) => {
-  const { name, type } = dataIn.dataIn;
-  const { modifyData } = dataIn;
+export interface InputCompProps {
+  type?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  disabled?: boolean;
+  maxLength?: number;
+  style?: React.CSSProperties;
+}
+
+const InputComp = ({
+  type,
+  value,
+  onChange,
+  placeholder,
+  disabled,
+  maxLength,
+  style,
+}: InputCompProps) => {
   return (
-    <>
-      <Wrapper>
-        <label htmlFor='name'>姓名</label>
-        <Input
-          id='name'
-          placeholder={name}
-          onBlur={(e) => {
-            modifyData(e.target.value, type);
-          }}
-        />
-        <label htmlFor='type'>型号</label>
-        <Input
-          id='type'
-          placeholder={type}
-          onBlur={(e) => {
-            modifyData(e.target.value);
-          }}
-        />
-      </Wrapper>
-    </>
+    <Wrapper>
+      <Input
+        type={type || 'text'}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        disabled={disabled}
+        maxLength={maxLength}
+        style={style}
+      />
+    </Wrapper>
   );
 };
 

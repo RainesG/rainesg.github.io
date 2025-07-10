@@ -31,6 +31,12 @@ const menuList: menuListType[] = [
     onClick: () => {},
   },
   {
+    itemTitle: 'BLOG',
+    itemType: 'button',
+    path: '/blog',
+    onClick: () => {},
+  },
+  {
     itemTitle: 'NONE',
     itemType: 'button',
     onClick: () => {},
@@ -39,6 +45,12 @@ const menuList: menuListType[] = [
     itemTitle: 'LAST',
     itemType: 'button',
     onClick: () => {},
+  },
+  {
+    itemTitle: 'ProForm',
+    itemType: 'button',
+    onClick: () => {},
+    path: '/proForm',
   },
 ];
 

@@ -1,19 +1,12 @@
-import testAction from "../../store/actions/testAction";
-import { useAppDispatch } from "../../reduxHook";
-import { useEffect, useState } from "react";
-import InputComp from "../../components/InputComp";
+import { useState } from 'react';
+import InputComp from '../../components/InputComp';
 
 const PageBlog = () => {
-  const dispatch = useAppDispatch();
   const [products, setProducts] = useState([
-    { name: "aaa", type: "a01" },
-    { name: "bbb", type: "b01" },
-    { name: "ccc", type: "c01" },
+    { name: 'aaa', type: 'a01' },
+    { name: 'bbb', type: 'b01' },
+    { name: 'ccc', type: 'c01' },
   ]);
-
-  useEffect(() => {
-    dispatch(testAction());
-  });
 
   function modifyFunc(modifiedData: string, type: string) {
     let tmp = products;
@@ -31,7 +24,7 @@ const PageBlog = () => {
     <>
       <div>我是Blog Page</div>
       {products.map((e, index) => {
-        return <InputComp dataIn={e} modifyData={modifyFunc} key={index} />;
+        return <InputComp value={e.name} key={index} />;
       })}
     </>
   );

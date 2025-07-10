@@ -1,17 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./global.css";
-import "raines-basic-components/dist/index.css"
-import reportWebVitals from "./reportWebVitals";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./router";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './global.css';
+import 'raines-basic-components/dist/index.css';
+import reportWebVitals from './reportWebVitals';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './store/reducers';
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") || document.createElement("div")
+  document.getElementById('root') || document.createElement('div')
 );
+
+const store = createStore(rootReducer);
+
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 
